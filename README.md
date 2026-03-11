@@ -67,7 +67,10 @@ car-price-analysis/
 │
 ├── excel/
 │   └── car_price_analysis.xlsx
-│
+|
+├── sql/
+│   └── car_data_queries.ipynb
+|
 ├── dashboard/
 │   └── car_price_dashboard.pbix
 │
