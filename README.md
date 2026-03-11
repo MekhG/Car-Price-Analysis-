@@ -31,7 +31,7 @@ An exploratory analysis of Indian car market pricing from 2015 to 2024, covering
 | Highest Avg Price Brand | Mahindra |
 | Best Mileage Fuel Type | CNG |
 | Lowest Service Cost Brand | Honda |
-| Highest Service Cost | Kia EV6 (₹18,800) |
+| High Mileage, Low Cost Car | Kia EV6 (₹18,800) |
 
 ### Price Insights
 - **Mahindra** leads in average price — premium positioning in the Indian market
