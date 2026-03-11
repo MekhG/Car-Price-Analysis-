@@ -51,11 +51,11 @@ An exploratory analysis of Indian car market pricing from 2015 to 2024, covering
 ---
 
 ## 🛠️ Tools Used
-- **Excel** — Data cleaning, EDA, pivot analysis
+- **Excel** — Data cleaning, EDA, pivot analysis,
+  - Dashboard: Brand comparison, bubble chart (Price vs Mileage by Engine CC), service cost ranking
 - **Power BI** — Two-page interactive dashboard (light + dark theme)
-  - Page 1: Brand comparison, bubble chart (Price vs Mileage by Engine CC), service cost ranking
-  - Page 2: Dark theme with scatter plot, KPI cards, brand slicer
-
+  - Dark theme with scatter plot, KPI cards, brand slicer
+- **SQL (SQLite via Python/Kaggle)** — data cleaning, price analysis as per engine cc, transmission, mileage, etc.
 ---
 
 ## 📁 Repository Structure
@@ -86,12 +86,14 @@ car-price-analysis/
 4. Created bubble chart correlating Price vs Mileage by Engine CC and Brand
 5. Analysed fuel type mileage distribution
 6. Built interactive Power BI dashboard with brand, model, fuel type, and price slicers
-7. Designed second dark-theme page for portfolio presentation
+7. Ran similar queries on SQL in Kaggle notebook
+8. Designed second dark-theme page for portfolio presentation
 
 ---
 
 ## 🚀 How to Run
 1. Clone the repo
-2. Open `excel/car_price_analysis.xlsx` for EDA
+2. Open `excel/car_price_analysis.xlsx` for EDA and dashboard
 3. Open `dashboard/car_price_dashboard.pbix` in Power BI Desktop
 4. Use slicers to filter by Brand, Model, Fuel Type, Engine CC, and Price range
+5. Open 'sql/car_data_queries.ipynb' for sql queries on the data
