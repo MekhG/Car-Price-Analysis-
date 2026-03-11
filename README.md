@@ -96,4 +96,4 @@ car-price-analysis/
 2. Open `excel/car_price_analysis.xlsx` for EDA and dashboard
 3. Open `dashboard/car_price_dashboard.pbix` in Power BI Desktop
 4. Use slicers to filter by Brand, Model, Fuel Type, Engine CC, and Price range
-5. Open 'sql/car_data_queries.ipynb' for sql queries on the data
+5. Open `sql/car_data_queries.ipynb` for sql queries on the data
