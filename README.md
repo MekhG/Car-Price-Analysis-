@@ -1,12 +1,15 @@
-# Car-Price-Analysis
-An exploratory analysis of Indian car market pricing from 2015 to 2024, covering 10 major brands and multiple models. The project examines how price, mileage, engine capacity, fuel type, and service cost relate to each other and which brands and fuel types offer the best overall value.
+# Car Price Analysis
 
-## 📊 Dashboard Preview
-<img width="622" height="278" alt="image" src="https://github.com/user-attachments/assets/109fadf6-caaa-4726-b629-31446db18664" />
+## Introduction / Description
+This project provides a comprehensive exploration of the Indian car market from 2015 to 2024, covering 10 major brands and multiple models. It investigates the interplay between price, fuel efficiency, engine capacity, transmission, and service costs, aiming to identify cars that offer the best value for buyers. Using a combination of Excel, SQL, and Power BI, the project uncovers pricing trends, mileage patterns, and brand-level insights to inform consumer decisions, fleet management strategies, and market positioning for manufacturers.
 
-<img width="637" height="355" alt="image" src="https://github.com/user-attachments/assets/1d1b79ff-6ebb-4004-a670-2008617413b9" />
+## Objective
+- Explore pricing trends across major Indian car brands.  
+- Identify most affordable cars, best mileage options, and lowest service cost brands.  
+- Analyze the impact of fuel type, engine capacity, and transmission on price and mileage.  
+- Provide actionable insights for buyers, manufacturers, and market analysts.  
 
-## 🗂️ Dataset
+## Dataset Preview
 | Column | Description |
 |---|---|
 | `Car_ID` | Unique identifier |
@@ -21,10 +24,22 @@ An exploratory analysis of Indian car market pricing from 2015 to 2024, covering
 | `Seating_Capacity` | Number of seats |
 | `Service_Cost` | Annual service cost in INR |
 
----
+## Tools and Methods Used
+- **Excel:** Data cleaning, exploratory data analysis, pivot tables, bubble charts, brand and fuel type comparisons.  
+- **Power BI:** Two-page interactive dashboard with KPI cards, scatter plots, and slicers; light and dark themes for presentation.  
+- **SQL (SQLite via Python/Kaggle):** Data cleaning, brand/fuel type/mileage analysis, price aggregation, and queries for reporting.  
 
-## 🔍 Key Findings
+## Analysis Steps
+1. Loaded dataset and performed EDA in Excel.  
+2. Identified most affordable, highest priced, and best mileage cars.  
+3. Built brand-wise average price and service cost comparisons.  
+4. Created bubble charts correlating Price vs Mileage by Engine CC and Brand.  
+5. Analyzed fuel type mileage distribution.  
+6. Built interactive Power BI dashboard with brand, model, fuel type, and price slicers.  
+7. Ran SQL queries in Kaggle for deeper analysis.  
+8. Designed second dark-theme page for portfolio presentation.  
 
+## Key Findings
 | Metric | Value |
 |---|---|
 | Most Affordable Car | Mahindra XUV 700 (Electric, Automatic) |
@@ -33,67 +48,55 @@ An exploratory analysis of Indian car market pricing from 2015 to 2024, covering
 | Lowest Service Cost Brand | Honda |
 | High Mileage, Low Cost Car | Kia EV6 (₹18,800) |
 
-### Price Insights
-- **Mahindra** leads in average price — premium positioning in the Indian market
-- **Tata Motors and Kia** follow close behind in average pricing
-- **Maruti Suzuki** remains the most budget-friendly brand on average
+**Price Insights:**  
+- Mahindra leads in average price, followed by Tata Motors and Kia.  
+- Maruti Suzuki remains the most budget-friendly brand.  
 
-### Mileage Insights
-- **CNG vehicles** deliver the highest mileage across all fuel types (~50+ km/kg)
-- **Electric vehicles** show strong mileage equivalent but high upfront pricing
-- **Diesel** offers better mileage than Petrol but higher service costs
+**Mileage Insights:**  
+- CNG vehicles deliver the highest mileage (~50+ km/kg).  
+- Electric cars show strong mileage equivalence but high upfront cost.  
+- Diesel vehicles offer better mileage than Petrol but higher service costs.  
 
-### Service Cost Insights
-- **Honda** has the lowest average service cost — strong value for money
-- **Renault and Maruti Suzuki** also rank low in service costs
-- Higher engine CC vehicles generally attract higher service costs
+**Service Cost Insights:**  
+- Honda has the lowest average service cost.  
+- Renault and Maruti Suzuki rank low in service costs.  
+- Higher engine CC correlates with higher service cost.  
 
----
+## Business Insights and Recommendations
 
-## 🛠️ Tools Used
-- **Excel** — Data cleaning, EDA, pivot analysis,
-  - Dashboard: Brand comparison, bubble chart (Price vs Mileage by Engine CC), service cost ranking
-- **Power BI** — Two-page interactive dashboard (light + dark theme)
-  - Dark theme with scatter plot, KPI cards, brand slicer
-- **SQL (SQLite via Python/Kaggle)** — data cleaning, price analysis as per engine cc, transmission, mileage, etc.
----
+**For Individual Buyers:**  
+- **Budget-conscious buyers:** Opt for brands like **Maruti Suzuki** or low engine CC CNG models to minimize upfront costs and maximize fuel efficiency.  
+- **High-performance buyers:** Consider **Mahindra** or **Kia** for premium features and higher resale value, but be mindful of higher service costs.  
+- **Fuel efficiency seekers:** Prioritize **CNG vehicles** for cost-effective mileage or **Electric vehicles** for long-term savings despite higher upfront costs.  
 
-## 📁 Repository Structure
-```
-car-price-analysis/
-│
-├── data/
-│   └── car_price_data.csv
-│
-├── excel/
-│   └── car_price_analysis.xlsx
-|
-├── sql/
-│   └── car_data_queries.ipynb
-|
-├── dashboard/
-│   └── car_price_dashboard.pbix
-│
-└── README.md
-```
+**For Fleet Operators / Corporate Buyers:**  
+- **Cost optimization:** Choose **CNG or low-engine CC vehicles** to reduce running costs and minimize fuel expenditures.  
+- **Long-term value:** Electric vehicles can offer significant savings on fuel and maintenance over their lifecycle despite higher purchase price.  
+- **Maintenance planning:** Favor brands like **Honda** with lower service costs to reduce fleet maintenance budgets.  
 
----
+**For Manufacturers / Market Analysts:**  
+- **Product positioning:** Brands can differentiate by emphasizing either affordability (Maruti, Tata) or premium features (Mahindra, Kia).  
+- **Service strategy:** Focus on lowering service costs or offering service packages to increase customer satisfaction and retention.  
+- **Fuel type trends:** Growing interest in CNG and Electric vehicles suggests opportunities for expanding EV/CNG lineups and targeting urban buyers.  
+- **Pricing strategy:** Monitor high-demand premium vehicles with high mileage efficiency (e.g., Kia EV6) to optimize price positioning without losing market share.  
 
-## 📈 Analysis Steps
-1. Loaded dataset and performed EDA in Excel
-2. Identified most affordable, highest priced, and best mileage cars
-3. Built brand-wise average price and service cost comparisons
-4. Created bubble chart correlating Price vs Mileage by Engine CC and Brand
-5. Analysed fuel type mileage distribution
-6. Built interactive Power BI dashboard with brand, model, fuel type, and price slicers
-7. Ran similar queries on SQL in Kaggle notebook
-8. Designed second dark-theme page for portfolio presentation
+**Actionable Dashboard Insights:**  
+- Use slicers to dynamically explore brand, model, fuel type, and price combinations to identify value-for-money vehicles.  
+- Track trends over 2015–2024 to anticipate shifts in affordability, fuel type popularity, and service cost optimization.
 
----
+## Dashboard Preview
+![Dashboard Preview](https://github.com/user-attachments/assets/109fadf6-caaa-4726-b629-31446db18664)  
+![Dashboard Preview](https://github.com/user-attachments/assets/1d1b79ff-6ebb-4004-a670-2008617413b9)  
 
-## 🚀 How to Run
-1. Clone the repo
-2. Open `excel/car_price_analysis.xlsx` for EDA and dashboard
-3. Open `dashboard/car_price_dashboard.pbix` in Power BI Desktop
-4. Use slicers to filter by Brand, Model, Fuel Type, Engine CC, and Price range
-5. Open `sql/car_data_queries.ipynb` for sql queries on the data
+## How to Run
+1. Clone the repository:  
+   ```bash
+   git clone <repo-url>
+
+2. Open Excel analysis: car_price_analysis.xlsx
+
+3. Open Power BI dashboard: car_price_dashboard.pbix
+
+4. Use slicers to filter by Brand, Model, Fuel Type, Engine CC, and Price range.
+
+5. Run SQL queries: car_data_queries.ipynb
