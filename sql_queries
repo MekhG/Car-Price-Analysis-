@@ -1,0 +1,197 @@
+import duckdb
+
+duckdb.query("""
+CREATE TABLE cars (
+    Car_ID INTEGER,
+    Brand TEXT,
+    Model TEXT,
+    Year INTEGER,
+    Fuel_Type TEXT,
+    Transmission TEXT,
+    Price INTEGER,
+    Mileage FLOAT,
+    Engine_CC INTEGER,
+    Seating_Capacity INTEGER,
+    Service_Cost INTEGER
+)
+""")
+
+
+duckdb.query("CREATE OR REPLACE TABLE cars AS SELECT * FROM df")
+
+result = duckdb.query("SELECT * FROM cars LIMIT 5").to_df()
+result
+
+
+query = """
+SELECT Brand,
+       ROUND(AVG(Price),0) AS avg_price
+FROM cars
+GROUP BY Brand
+ORDER BY avg_price DESC
+"""
+
+result = duckdb.query(query).to_df()
+result.head()
+
+
+query11 = """
+SELECT Brand,
+       ROUND(AVG(Price),0) AS avg_price
+FROM cars
+GROUP BY Brand
+ORDER BY avg_price DESC
+"""
+result1 = duckdb.query(query1).to_df()
+print("1️⃣ Average car price by brand")
+print(result11)
+
+
+
+query12 = """
+SELECT Fuel_Type,
+       ROUND(AVG(Mileage),2) AS avg_mileage
+FROM cars
+GROUP BY Fuel_Type
+ORDER BY avg_mileage DESC
+"""
+result12 = duckdb.query(query2).to_df()
+print("\n2️⃣ Average mileage by fuel type")
+print(result12)
+
+
+
+query13 = """
+SELECT *
+FROM (
+    SELECT *,
+           ROW_NUMBER() OVER(PARTITION BY Brand ORDER BY Price) AS rn
+    FROM cars
+)
+WHERE rn = 1
+"""
+result13 = duckdb.query(query3).to_df()
+print("\n3️⃣ Most affordable car per brand")
+print(result13)
+
+
+
+query14 = """
+SELECT Transmission,
+       COUNT(*) AS num_models
+FROM cars
+GROUP BY Transmission
+"""
+result4 = duckdb.query(query4).to_df()
+print("\n4️⃣ Car count by transmission type")
+print(result14)
+
+
+
+query15 = """
+SELECT
+    CASE
+        WHEN Engine_CC < 1200 THEN 'Small Engine'
+        WHEN Engine_CC BETWEEN 1200 AND 1800 THEN 'Medium Engine'
+        ELSE 'Large Engine'
+    END AS engine_category,
+    ROUND(AVG(Price),0) AS avg_price
+FROM cars
+GROUP BY engine_category
+ORDER BY avg_price
+"""
+result5 = duckdb.query(query5).to_df()
+print("\n5️⃣ Price vs Engine Category")
+print(result15)
+
+
+
+query16 = """
+SELECT Brand, Model, Price, Mileage
+FROM cars
+ORDER BY Mileage DESC, Price ASC
+LIMIT 10
+"""
+result6 = duckdb.query(query6).to_df()
+print("\n6️⃣ Top 10 most economical cars")
+print(result16)
+
+
+
+query17 = """
+SELECT Brand, Model,
+       Price + (Service_Cost * 5) AS five_year_cost
+FROM cars
+ORDER BY five_year_cost ASC
+LIMIT 10
+"""
+result7 = duckdb.query(query7).to_df()
+print("\n7️⃣ Annual ownership cost over 5 years")
+print(result17)
+
+
+
+query18 = """
+SELECT Brand,
+       ROUND(AVG(Service_Cost),0) AS avg_service_cost
+FROM cars
+GROUP BY Brand
+ORDER BY avg_service_cost DESC
+"""
+result8 = duckdb.query(query8).to_df()
+print("\n8️⃣ Average service cost by brand")
+print(result18)
+
+
+
+query19 = """
+SELECT Brand, Model, Seating_Capacity, Mileage
+FROM cars
+WHERE Seating_Capacity >= 7
+ORDER BY Mileage DESC
+"""
+result9 = duckdb.query(query9).to_df()
+print("\n9️⃣ Cars with seating >= 7 and high mileage")
+print(result19)
+
+
+
+query20 = """
+SELECT Brand, Model, Year, Price
+FROM cars
+WHERE Year >= 2022 AND Price > 1500000
+ORDER BY Price DESC
+"""
+result10 = duckdb.query(query10).to_df()
+print("\n🔟 Recent models with premium pricing")
+print(result20)
+
+query_affordable = """
+SELECT Brand,
+       Model,
+       Price,
+       Service_Cost,
+       (Price + Service_Cost) AS total_cost
+FROM cars
+ORDER BY total_cost ASC
+LIMIT 10
+"""
+
+result_affordable = duckdb.query(query_affordable).to_df()
+print("Top 10 most affordable cars (Price + Service Cost)")
+print(result_affordable)
+
+query_affordable = """
+SELECT Brand,
+       Model,
+       Price,
+       Service_Cost,
+       (Price + Service_Cost) AS total_cost
+FROM cars
+ORDER BY total_cost ASC
+LIMIT 10
+"""
+
+result_affordable = duckdb.query(query_affordable).to_df()
+print("Top 10 most affordable cars (Price + Service Cost)")
+print(result_affordable)
