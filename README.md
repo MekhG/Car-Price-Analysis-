@@ -91,7 +91,7 @@ This project provides a comprehensive exploration of the Indian car market from 
 ## How to Run
 1. Clone the repository:  
    ```bash
-   git clone <repo-url>
+   git clone (https://github.com/MekhG/Car-Price-Analysis-)
 
 2. Open Excel analysis: car_price_analysis.xlsx
 
